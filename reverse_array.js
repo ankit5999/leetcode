@@ -21,8 +21,30 @@
 
 /////=====>> Method 2 <<=====/////
 
-function myarray(array){
-    var start = 0;
+// function myarray(array){
+//     var start = 0;
+//     var end = array.length-1;
+
+//     while(start < end){
+//         var temp = array[start];
+//         array[start] = array[end];
+//         array[end] = temp;
+//         start +=1;
+//         end -=1;
+//     }
+//     return array;
+// }
+
+// const ans = myarray([1,2,3,4]);
+// console.log(ans);
+
+
+
+//////////// Method 3//////////
+// Revers after an Index
+
+function myarray(array,startIndex){
+    var start = startIndex;
     var end = array.length-1;
 
     while(start < end){
@@ -35,5 +57,6 @@ function myarray(array){
     return array;
 }
 
-const ans = myarray([1,2,3,4]);
+const ans = myarray([1,2,3,4,5,6,7,8], 4);
 console.log(ans);
+
