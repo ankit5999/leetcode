@@ -6,5 +6,4 @@ Leetcode Coding Problems
 ### Website:  https://workforwin.com
 ### Youtube:  https://youtube.com/workforwin
 
-
-### &copy; 2021 Workforwin
+&copy; 2021 Workforwin
