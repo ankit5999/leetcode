@@ -1,40 +1,60 @@
 // min stack implementation with extra space
 
+// Stack class
+class Stack {
 
-var s = [];
-var ss = [];
-
-function push(a){
-    s.push(a);
-    if(ss.length === 0 || ss[ss.length-1] >= a){
-        ss.push(a)
+    // Array is used to implement stack
+    constructor() {
+        this.s = [];
+        this.ss = [];
     }
-    return a;
-}
 
-function pop(){
-    if(s.length == 0){
-        return -1
-    }
-    else{
-        var ans = s[s.length-1];
-        s.pop();
 
-        if(ss[ss.length-1] == ans){
-            ss.pop()
+    // push(item)
+    push(element) {
+        // push element into the s stack
+        this.s.push(element);
+        if (this.ss.length === 0 || this.ss[this.ss.length - 1] >= element) {
+            this.ss.push(element)
         }
-        return ans
+        return element;
+    }
+
+    // pop()
+
+    pop() {
+        if (this.s.length == 0) {
+            return -1
+        }
+        else {
+            var ans = this.s[this.s.length - 1];
+            this.s.pop();
+
+            if (this.ss[this.ss.length - 1] == ans) {
+                this.ss.pop()
+            }
+            return ans
+        }
+    }
+
+    // printStack function
+    printStack() {
+        if (this.ss.length == 0) {
+            return -1
+        }
+        else {
+            return this.ss[this.ss.length - 1];
+        }
     }
 }
 
-function getmin(){
-    if(ss.length == 0){
-        return -1
-    }
-    else{
-        return ss[ss.length-1];
-    }
-}
 
-const ans = push(18)
-console.log(ans);
+var stack = new Stack();
+stack.push(18);
+stack.push(19);
+stack.push(29);
+stack.push(15);
+stack.pop();
+
+
+console.log(stack.printStack());
